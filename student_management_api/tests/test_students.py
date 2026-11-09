@@ -107,7 +107,7 @@ def test_get_student_by_id(sample_student):
 
 
 def test_search_students_by_name(many_students):
-    response = client.get("/students/search/", params={"name": "Anand"})
+    response = client.get("/students/search", params={"name": "Anand"})
 
     assert response.status_code == 200
     names = [student["name"] for student in response.json()]

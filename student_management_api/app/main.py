@@ -103,7 +103,7 @@ def get_students():
     return list(students.values())
 
 
-@app.get("/students/search/", response_model=list[Student])
+@app.get("/students/search", response_model=list[Student])
 def search_students(name: str = Query(min_length=1)):
     """
     Search students by name:  GET /students/search/?name=Anand
